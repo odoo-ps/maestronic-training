@@ -25,5 +25,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
+        "views/portal_helpdesk.xml",
     ],
 }
