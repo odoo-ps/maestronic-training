@@ -24,5 +24,17 @@
     <!-- Menu -->
     <menuitem name="Car" id="menu_root" action="car_action_window"/>
 
+    <!-- Modifying Helpdesk Ticket View -->
+    <record id="view_helpdesk_ticket_form" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.view.form.inherit</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email_cc']" position="after">
+                <field name="additional_note" />
+                <field name="car" />
+            </xpath>
+        </field>
+    </record>
   </data>
 </odoo>

@@ -11,3 +11,9 @@ class Car(models.Model):
     name = fields.Char()
     brand = fields.Char()
     miles = fields.Integer()
+
+class HelpdeskTicket(models.Model):
+    _inherit = "helpdesk.ticket"
+
+    additional_note = fields.Text()
+    car = fields.Many2one('car.car')
