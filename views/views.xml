@@ -1,60 +1,28 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="car.list">
+    <record model="ir.ui.view" id="view_car_list">
       <field name="name">car list</field>
       <field name="model">car.car</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="brand"/>
+          <field name="miles"/>
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="car.action_window">
-      <field name="name">car window</field>
+    <record model="ir.actions.act_window" id="car_action_window">
+      <field name="name">Car</field>
       <field name="res_model">car.car</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="car.action_server">
-      <field name="name">car server</field>
-      <field name="model_id" ref="model_car_car"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+    <!-- Menu -->
+    <menuitem name="Car" id="menu_root" action="car_action_window"/>
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="car" id="car.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="car.menu_1" parent="car.menu_root"/>
-    <menuitem name="Menu 2" id="car.menu_2" parent="car.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="car.menu_1_list" parent="car.menu_1"
-              action="car.action_window"/>
-    <menuitem name="Server to list" id="car" parent="car.menu_2"
-              action="car.action_server"/>
--->
   </data>
 </odoo>

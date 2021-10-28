@@ -1,18 +1,13 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
-# class car(models.Model):
-#     _name = 'car.car'
-#     _description = 'car.car'
+class Car(models.Model):
+    _name = 'car.car'
+    _description = 'car.car'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+    # fields/attributes of Car
+    name = fields.Char()
+    brand = fields.Char()
+    miles = fields.Integer()
