@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_helpdesk_ticket_form_helpdesk_customization" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.form.inherit.helpdesk.customization</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_repair.helpdesk_ticket_view_form_inherit_helpdesk_repair"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_repairs']" position="after">
+                <button class="oe_stat_button" icon="fa-files-o" type="object" name="action_view_related_incidents">
+                    <span>Other Incidents</span>
+                </button>
+            </xpath>
+            <xpath expr="//group" position="after">
+                <group string="Additional">
+                    <group>
+                        <field name="direct_fs_intervention" />
+                        <field name="x_driver" />
+                        <field name="x_gps_coordinates" />
+                        <field name="x_license_plate" />
+                        <field name="x_line" />
+                        <field name="x_concession_id" />
+                        <field name="x_customer_id" />
+                        <field name="x_problem_category" />
+                        <field name="x_problem_subcategory" />
+                        <field name="x_resolution_category" />
+                        <field name="x_resolution_subcategory" />
+                    </group>
+                    <group>
+                        <field name="x_relocation_trip" />
+                        <field name="x_reporter" />
+                        <field name="x_roundtrip" />
+                        <field name="x_stop" />
+                        <field name="x_trip" />
+                        <field name="x_trip_start_time" />
+                        <field name="x_vehicle_location" />
+                        <field name="x_vehicle_type" />
+                        <!-- <field name="x_customer_case" /> -->
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <!-- View Specific for the customer group -->
+    <record id="view_helpdesk_ticket_form_helpdesk_customization_user" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.view.form.inherit</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="view_helpdesk_ticket_form_helpdesk_customization"/>
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_customer')])]"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="attributes">
+                <attribute name="domain">[('customer_access.child_ids.user_ids', '=', uid)]</attribute>
+                <attribute name="options">{'no_open': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="replace">
+                <field name="partner_id" domain="[('parent_id.child_ids.user_ids', 'in', uid)]" groups="helpdesk_customization.group_customer"/>
+            </xpath>
+            <xpath expr="header" position="inside">
+                <field name="use_product_repairs" invisible="1"/>
+                <button name="%(helpdesk_repair.action_repair_order_form)d" type="action"
+                    string="Repair" attrs="{'invisible': [('use_product_repairs', '=', False)]}"
+                    context="{'default_product_id': product_id, 'default_lot_id': lot_id, 'default_partner_id': partner_id, 'default_ticket_id': id, 'default_company_id': company_id}"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='ticket_type_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tag_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_email']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="helpdesk_ticket_view_kanban_inherit_helpdesk_custo" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.view.kanban.inherit</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//strong" position="replace">
+                <strong><field name="display_name" /></strong>
+            </xpath>
+        </field>
+    </record>
+</odoo>
