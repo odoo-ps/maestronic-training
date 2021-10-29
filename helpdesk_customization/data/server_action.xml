@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Create Server action to auto-add or remove user from group:  -->
+    <record id="action_user_assign_new_group" model="ir.actions.server">
+        <field name="name">Add/Remove Internal User+ Access</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="binding_model_id" ref="base.model_res_users"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">
+    <![CDATA[
+records.add_remove_user_groups()
+    ]]>
+        </field>
+    </record>
+</odoo>

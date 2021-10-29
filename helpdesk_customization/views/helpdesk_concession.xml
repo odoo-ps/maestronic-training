@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="view_helpdesk_concession_tree" model="ir.ui.view">
+        <field name="name">helpdesk.concession.tree</field>
+        <field name="model">helpdesk.concession</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_view_helpdesk_concession" model="ir.actions.act_window">
+        <field name="name">Concession</field>
+        <field name="res_model">helpdesk.concession</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="helpdesk_concession_menu"
+        name="Concession"
+        action="action_view_helpdesk_concession"
+        parent="helpdesk.helpdesk_menu_config"/>
+</odoo>

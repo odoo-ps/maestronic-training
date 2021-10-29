@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Hiding Menus -->
+    <record id="calendar.mail_menu_calendar" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="contacts.menu_contacts" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="website.menu_website_configuration" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="planning.planning_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="hr.menu_hr_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="hr_holidays.menu_hr_holidays_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="hr_expense.menu_hr_expense_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="approvals.approvals_menu_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="maintenance.menu_maintenance_title" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="helpdesk.helpdesk_ticket_menu_all" model="ir.ui.menu">
+        <field name="groups_id" eval="[(6, 0, [ref('helpdesk_customization.group_user_plus')])]"/>
+    </record>
+    <record id="repair.menu_repair_order" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('group_repair_user'))]"/>
+    </record>
+</odoo>
