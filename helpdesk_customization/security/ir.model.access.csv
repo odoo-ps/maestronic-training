@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_helpdesk_concession,access_helpdesk_concession_user,model_helpdesk_concession,base.group_user,1,1,1,1
+access_repair_fee_customer,Repair Fee Customer,repair.model_repair_fee,group_repair_user,1,1,1,1
+access_repair_customer,Repair Customer,repair.model_repair_order,group_repair_user,1,1,1,1
+access_repair_tag_customer,Repair Tags Customer,repair.model_repair_tags,group_repair_user,1,1,1,1
+access_stock_production_lot_customer,stock.production.lot customer,stock.model_stock_production_lot,group_repair_user,1,1,1,1
+access_repair_line_customer,repair.line customer,repair.model_repair_line,group_repair_user,1,1,1,1
+access_account_tax_customer,account.tax customer,account.model_account_tax,group_repair_user,1,0,0,0
+access_repair_order_make_invoice_customer,access.repair.order.make_invoice.customer,repair.model_repair_order_make_invoice,group_repair_user,1,1,1,0
+access_stock_warn_insufficient_qty_repair_customer,access.stock.warn.insufficient.qty.repair.customer,repair.model_stock_warn_insufficient_qty_repair,group_repair_user,1,1,1,0
+access_stock_move_customer,access_stock_move_customer,stock.model_stock_move,group_repair_user,1,1,1,0
+access_helpdesk_team_customer,access_helpdesk_team_customer,helpdesk.model_helpdesk_team,group_customer,1,1,1,0
+access_helpdesk_problem_category,access_helpdesk_problem_category,model_helpdesk_problem_category,base.group_user,1,1,0,0
+access_helpdesk_problem_subcategory,access_helpdesk_problem_subcategory,model_helpdesk_problem_subcategory,base.group_user,1,1,0,0
+access_helpdesk_solution_category,access_helpdesk_solution_category,model_helpdesk_solution_category,base.group_user,1,1,0,0
+access_helpdesk_solution_subcategory,access_helpdesk_solution_subcategory,model_helpdesk_solution_subcategory,base.group_user,1,1,0,0
