@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_view_helpdesk_problem_category" model="ir.actions.act_window">
+        <field name="name">Problem Category</field>
+        <field name="res_model">helpdesk.problem.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="view_helpdesk_problem_subcategory_tree" model="ir.ui.view">
+        <field name="name">helpdesk.problem.subcategory.tree</field>
+        <field name="model">helpdesk.problem.subcategory</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <menuitem
+        id="helpdesk_problem_category_menu_item"
+        name="Problem Category"
+        action="action_view_helpdesk_problem_category"
+        parent="helpdesk.helpdesk_menu_config"/>
+    <record id="view_helpdesk_solution_subcategory_tree" model="ir.ui.view">
+        <field name="name">helpdesk.solution.subcategory.tree</field>
+        <field name="model">helpdesk.solution.subcategory</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_view_helpdesk_solution_category" model="ir.actions.act_window">
+        <field name="name">Solution Category</field>
+        <field name="res_model">helpdesk.solution.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="helpdesk_solution_category_menu_item"
+        name="Solution Category"
+        action="action_view_helpdesk_solution_category"
+        parent="helpdesk.helpdesk_menu_config"/>
+</odoo>
