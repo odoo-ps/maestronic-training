@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="tickets_followup" inherit_id="helpdesk.tickets_followup">
+    <xpath expr="//div[@name='description']" position="after">
+        <div class="row mb-4" name="additional_note">
+            <strong class="col-lg-2">Additional Note</strong>
+            <div t-if="ticket.additional_note" class="col-lg-10" t-field="ticket.additional_note"/>
+            <div t-else="" class="col-lg-10">
+                <em class="text-muted"><small>No additional notes</small></em>
+            </div>
+        </div>
+    </xpath>
+</template>
+
+</odoo>
